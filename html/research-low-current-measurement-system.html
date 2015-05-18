@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+   <meta charset="utf-8">
+   <link rel="icon" type="image/ico" href="../style/favicon.ico">
+   <link rel="stylesheet" type="text/css" id="bootstrap.css" href="../style/bootstrap.css">
+   <title>e-Lab | Eugenio Culurciello's laboratory</title>
+
+   <!-- include google analytics -->
+   <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   
+      ga('create', 'UA-49283567-1', 'purdue.edu');
+      ga('send', 'pageview');
+   </script>
+
+   <!-- include markdown webdocs -->
+   <script src="../document.min.js" userjs="user.js" icon="favicon.ico" id="DOC" onerror="var
+      l=document.createElement('link'),s=document.createElement('script');l.rel='stylesheet';
+      l.href='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css';
+      l.id='bootstrap.css';l.auto='1';document.head.insertBefore(l,document.getElementById('DOC'));
+      s.src='http://aplib.github.io/document.min.js';document.head.appendChild(s);">
+   </script>
+
+   <!-- set page layout -->
+   <!--[page-layout scheme=centered columns=100%]-->
+
+</head>
+
+<body>
+
+<!-- display header & menu -->
+<!--header-panel-->
+<!--fixed-top-bar->header-bar-->
+<!--header-bar-->
+
+
+<!-- main contents begins here ----------------------> <!--content-panel
+
+
+## Low-Current Measurement
+---
+
+### Patch clamp on a chip
+
+The goal of this project is to implement a low-current measurement system on a chip for biomedical application and patch-clamp measurements. Patch clamping is one of the most predictive analytical methods in cell and drug research, and integration of this technique is highly desirable for speed and throughput, and also to minimize parasitic measurement effects due to an external slow and bulky measurement system.
+
+We are the first group to integrate a state-of-the-art patch-clamp measurement system for whole-cell recordings in a millimeter size device. This device is used to study the physiology of living cells and to test and improve the safety of medical compounds. The device can be used in high-throughput systems to test 384 wells simultaneously. Our recent two-channel system was implemented in a 0.5 um silicon-on-sapphire process. The system can record two simultaneous cell membrane currents up to +/-20 uA with a rms noise of 8 pA in a 10 kHz bandwidth. The system can compensate for the capacitance and resistance of the pipette electrode, up to 10 pF and 100 Mohm respectively. The system die size is 3 x 3 mm and the power consumption is 5 mW per channel at 3.3 V. This is a collaboration with prof. Fred [Sigworth](http://medicine.yale.edu/labs/sigworth/www/).
+
+Here is a short video of the most current instrument and software demonstration:
+
+[YouTube.Player videoID=su_L6DfHqN4 start=0 quality=large command=stop/]
+
+Please check our [publications]({{=$DOC.root}}html/publications.html) for more recent details on these projects.
+
+#### Nanopore Sensing
+
+Currently, there are no inexpensive general purpose commercial arrays of low noise current amplifiers for biomedical interfaces. The ability to perform mutli-channel recording is crucial in automated systems to collect large datasets that can then be statistically analyzed. This work presents a complete multi-channel low-noise integrated low current measurement system that features high bandwidth, sensitivity, and dynamic range to measure bidirectional currents in the range required for several different biomedical recording applications while allowing control of the voltage at the input node, known as voltage clamping. One example application for the sensor includes nanoporous sensing.
+
+![nanopore]({{=$DOC.root}}data/img/2011-11-nanopore.jpg)
+
+Our latest system includes a micro-chip of using capacitive feedback that exhibits 190 fA of RMS noise in a 1 kHz bandwidth. The sampling rate is selectable up to 100 kHz. When measuring the amplifier noise with a 10 Gohm resistor and a 47 pF capacitor at the input, typical of cell membrane capacitance in bilayer and patch clamp experiments, the measured RMS noise was 2.44 pA on a 50 pA signal in a 10 kHz bandwidth. We have used the system to measure the characteristics of an artificial lipid bilayer and to detect interactions between gold nanoparticles and a nanopore.
+
+![faraday_cage]({{=$DOC.root}}data/img/2011-11-faraday_cage.jpg)
+
+A Nanopore and the low current measurement system are both placed inside the spherical Faraday cage to shield the measurement from environmental noise. The system is powered and controlled by the laptop.
+
+In this system, an amplifier with capacitive feedback is used to fix the applied voltage to the cell under test. Either resistive or capacitive feedback could have been chosen, each with its own advantages and disadvantages. A resistive feedback system enables continuous time recording, while my capacitive feedback system is a discrete time system because it requires resetting the capacitor to avoid saturating the amplifier. Capacitive feedback was chosen because resistive feedback would add thermal noise due to the resistor. In order to reduce the thermal noise of the resistor, a very large value resistor would be necessary which would have too much distributed capacitance to be implemented in an existing inexpensive commercial CMOS technology. The capacitive feedback system adds noise only due to the switching effect on the capacitor. The overall noise of the measurement with this system will depend on the equivalent input circuit and the sampling frequency.
+
+![block_multiplexer]({{=$DOC.root}}data/img/2011-11-project_block_multiplexer_to_output.jpg)
+
+The input stage of the LCMS consists of a current integrator that provides the voltage clamping operation and integrates the input current over the capacitor CF. The capacitive feedback post amplifier provides additional voltage gain.
+
+16-Channel sensing is enabled via multiplexing for easy sequential readout. Each channel consists of a current integrator and post amplifier as shown on the right and is individually addressable. The low-pass filter reduces unwanted noise due to aliasing above twice the sampling frequency. ADC is then performed on Vout.
+
+![die]({{=$DOC.root}}data/img/2011-11-lcms2010die-300x140.jpg)
+
+Die Micrograph of new 16 channel sensor, enabling higher throughput and lower noise.
+
+![pcb]({{=$DOC.root}}data/img/2011-11-lcms2010pcb-300x174.jpg)
+
+16-Channel sensor on low noise 4-channel PCB that interfaces to the Opal Kelly XEM 3001v2 board.
+
+Design details are also included in our book: **"Biomedical Circuits and Systems"**, Integrated Instrumentation, by Wei Tang, Evan Joon Hyuk Park, Brian Goldstein, Dongsoo Kim, Pujitha Weerakoon, Eugenio Culurciello, e-Lab. Lulu 2013. [Ordering info](http://www.lulu.com/shop/eugenio-culurciello-and-wei-tang-and-evan-joon-hyuk-park-and-brian-goldstein/biomedical-circuits-and-systems/hardcover/product-21196906.html;jsessionid=7416EA184848D48D48B0B3A5E69BD60A#productDetails).
+
+
+--> <!-- main contents ends here -------------------------------------->
+
+<!--footer-panel-->
+
+<noscript><div class="alert alert-warning">This Website requires your browser to be JavaScript enabled.</div></noscript>
+</body>
+</html>

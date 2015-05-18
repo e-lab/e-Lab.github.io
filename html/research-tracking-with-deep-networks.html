@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+   <meta charset="utf-8">
+   <link rel="icon" type="image/ico" href="../style/favicon.ico">
+   <link rel="stylesheet" type="text/css" id="bootstrap.css" href="../style/bootstrap.css">
+   <title>e-Lab | Eugenio Culurciello's laboratory</title>
+
+   <!-- include google analytics -->
+   <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   
+      ga('create', 'UA-49283567-1', 'purdue.edu');
+      ga('send', 'pageview');
+   </script>
+
+   <!-- include markdown webdocs -->
+   <script src="../document.min.js" userjs="user.js" icon="favicon.ico" id="DOC" onerror="var
+      l=document.createElement('link'),s=document.createElement('script');l.rel='stylesheet';
+      l.href='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css';
+      l.id='bootstrap.css';l.auto='1';document.head.insertBefore(l,document.getElementById('DOC'));
+      s.src='http://aplib.github.io/document.min.js';document.head.appendChild(s);">
+   </script>
+
+   <!-- set page layout -->
+   <!--[page-layout scheme=centered columns=100%]-->
+
+</head>
+
+<body>
+
+<!-- display header & menu -->
+<!--header-panel-->
+<!--fixed-top-bar->header-bar-->
+<!--header-bar-->
+
+
+<!-- main contents begins here ----------------------> <!--content-panel
+
+
+## Tracking with deep networks
+---
+
+Tracking is the process of locating a user selected object in different frames as it moves around the scene. It has a variety of uses such as human-computer interactions, gesture recognition, driver assistance systems, security monitoring, medical imaging and agricultural automations. There has been extensive studies for tracking during the last four decades and many different tracking algorithms have been proposed. However, all these trackers are limited to simple scenarios such as no occlusion, illumination or appearance change and no complex object motion. On the other hand we have such perfect tracker examples: humans and animals!! The human visual system object tracking performance is currently unsurpassed by engineered systems, thus our research tries to take inspiration and reverse-engineer the known principles of cortical processing during visual tracking.Inspired by recent ﬁndings on shallow feature extractors of the visual cortex, we postulate that simple tracking processes are based on a shallow neural network that can identify quickly similarities between object features repeated in time. We propose an algorithm that can track and extract motion of an object based on the similarity between local features observed in subsequent frames. The local features are initially deﬁned as a bounding box that deﬁnes the object to track.
+
+
+#### The Similarity Matching Ratio (SMR) Tracker
+
+The SMR tracker achieved the state-of-the-art performance on the TLD [1] dataset as presented in Table 2. See the [SMR Paper](http://arxiv.org/pdf/1209.2696v1.pdf) to learn more about it!! Download the [code](https://sites.google.com/site/trackingbyconvnet/tracking/SMR_Tracker.zip?attredirects=0) and try yourself!
+
+Figure 1 shows snopshots from videos and Table 1 lists the properties. Detection is considered to be correct if its overlap with ground truth bounding box is larger than 25% .
+
+![TLD_dataset]({{=$DOC.root}}data/img/2012-11-TLD-dataset.png)
+
+Figure 1 :  Snapshots from the sequences with the objects marked by the bounding box [1]
+
+
+|Name|Frames|Mov. Cam|Partial Occ.|Full Occ.|Pose Chng|Illum. Chng|Scale Chng|Similar Objects|
+|----|------|--------|------------|---------|---------|-----------|----------|---------------|
+|1. David        | 761 | yes | yes | no       | yes | yes | yes | no  |
+|2. Jumping      | 313 | yes | no  | no       | no  | no  | no  | no  |
+|3. Pedestrian 1 | 140 | yes | no  | no       | no  | no  | no  | no  |
+|4. Pedestrian 2 | 338 | yes | yes | yes (72) | no  | no  | no  | yes |
+|5. Pedestrian 3 | 184 | yes | yes | yes (28) | no  | no  | no  | yes |
+|6. Car          | 945 | yes | yes | yes (85) | no  | no  | no  | yes |
+
+Table 1: Properties of sequences [1]
+
+|Frames | *[3] |*[4] |*[5] |*[6] |*0[2]|*FB[2]|*NCC[2]|*SSD[2]|*FB+NCC[2]|SMR|
+|-------|------|-----|-----|-----|-----|------|-------|-------|----------|---|
+|David       |  761 |  17 | N/A |  94 | 135 |  93 |  761 | 144 |  28 |  761 |  761|
+|Jumping     |  313 |  75 | 313 |  44 | 313 |  36 |   76 |  87 |  79 |  170 |  313|
+|Pedestrian1 |  140 |  11 |   6 |  22 | 101 |  15 |   37 |  40 |  12 |  140 |  140|
+|Pedestrian2 |  338 |  33 |   8 | 118 |  37 |  97 |   97 |  97 |  97 |   97 |  236|
+|Pedestrian3 |  184 |  50 |   5 |  53 |  49 |  52 |   52 |  52 |  52 |   52 |   66|
+|Car         |  945 | 163 | N/A |  10 |  45 | 248 |  510 | 394 | 353 |  510 |  510|
+|Total       | 2681 | 349 | 332 | 341 | 680 | 803 | 1533 | 814 | 621 | 1730 | 2026|
+|Best        |  N\A |   0 |  1  |   0 |   1 |   0 |    2 |   0 |   0 |    3 |    7|
+
+Table 2. Comparison with state-of-the-art approaches in terms of the number of correctly tracked frames. The table is taken from [2] and modified.
+
+
+#### Videos of the SMR tracker on the TLD dataset
+
++ David
+[YouTube.Player videoID=FiUbhmwtASM start=0 quality=large command=stop/]
+
++ Jumping
+[YouTube.Player videoID=zkhv6cvK-cQ start=0 quality=large command=stop/]
+
++ Pedestrian1
+[YouTube.Player videoID=Pdt7wti2wVw start=0 quality=large command=stop/]
+
++ Pedestrian 2
+[YouTube.Player videoID=nVhkO6ZT5sg start=0 quality=large command=stop/]
+
++ Pedestrian 3
+[YouTube.Player videoID=gcsLCIGYvcA start=0 quality=large command=stop/]
+
++ Car
+[YouTube.Player videoID=1eIV1r3tShg start=0 quality=large command=stop/]
+
+#### References
+
+1. Z. Kalal, J. Matas, and K. Mikolajczyk. P-N Learning: Bootstrapping Binary Classiﬁers by Structural Constraints. Conference on Computer Vision and Pattern Recognition. 2010
+
+1. Z. Kalal, K. Mikolajczyk. Forward-Backward Error: Automatic Detection of Tracking Failures. International Conference on Pattern Recognition. 2010.
+
+1. J. Lim, D. Ross, R. Lin, and M. Yang. Incremental learning for visual tracking. NIPS, 2005.
+
+1. R. Collins, Y. Liu, and M. Leordeanu. Online selection of discriminative tracking features. PAMI, 27(10):1631–1643, 2005.
+
+1. S. Avidan. Ensemble tracking. PAMI, 29(2):261–271, 2007.
+
+1. B. Babenko, M.-H. Yang, and S. Belongie. Visual tracking with online multiple instance learning. CVPR, 2009.
+
+
+--> <!-- main contents ends here -------------------------------------->
+
+<!--footer-panel-->
+
+<noscript><div class="alert alert-warning">This Website requires your browser to be JavaScript enabled.</div></noscript>
+</body>
+</html>

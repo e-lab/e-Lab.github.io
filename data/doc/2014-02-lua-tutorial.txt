@@ -1,0 +1,233 @@
+----------------------------------------------------
+-- Lua and Torch tutorial
+-- Author : Aysegul Dundar 
+-- Date 02/05/2014
+-- E-mail: adundar@purdue.edu
+
+-- Tutorial for beginners of Lua+Torch
+-- Some useful tips
+----------------------------------------------------
+
+
+----------------------------------------------------
+--  LUA
+----------------------------------------------------
+----------------------------------------------------
+-- Only nil and false are falsy; 0 and '' are true!
+----------------------------------------------------
+
+BoolValue = false
+
+if not BoolValue then print('false') end
+if BoolValue~=true then print('false') end  
+-- if not = ( ~= )             if = (==)
+
+---------------------------------------------------
+-- For loop the range includes both ends.
+-- By default i increases by 1, if for i=1, 100, 2
+-- increases by 2
+---------------------------------------------------
+
+karlSum = 0
+for i = 1, 100 do
+  karlSum = karlSum + i
+end
+
+---------------------------------------------------
+-- Read and Write
+----------------------------------------------------
+-- write
+o.write('hello world\n')  -- Defaults to stdout.
+print 'hello world'
+print('hello world')
+
+-- read
+line = io.read()  -- Reads next stdin line.
+
+-- String concatenation uses the .. operator:
+print('Hello, ' .. line)
+
+----------------------------------------------------
+--  Functions.
+----------------------------------------------------
+
+function sort_two(val1, val2)
+  if (val1 > val2) then 
+     return val1, val2
+  else 
+     return val2, val1 --return more than 1 value 
+  end 
+end
+
+print(sort_two(5, 10))
+max  = sort_two(7, 2)  --you can take only the first
+print(max)
+
+----------------------------------------------------
+--  Tables
+----------------------------------------------------
+
+dataset = {}
+table.insert(dataset, {value = 5 , label = 'face'})
+table.insert(dataset, {value = 2 , label = 'face'})
+table.insert(dataset, {value = 7 , label = 'face'})
+
+for i, each in ipairs(dataset) do                                             
+     print(i, each.value, each.label)                                                
+end
+
+
+
+----------------------------------------------------
+--  Modules
+----------------------------------------------------
+-- Have a file named mod.lua
+function sum(val1, val2)
+   print(val1+val2)
+end
+
+print('Hello')
+
+-- require's return values are cached so a file is
+-- run at most once, even when require'd many times
+
+local a = require('mod')  -- Prints Hello!
+local b = require('mod')  -- Doesn't print;
+
+-- dofile is like require without caching:
+dofile('mod.lua')  --> Hello!
+dofile('mod.lua')  --> Hello! (runs again, unlike require)
+
+-- loadfile loads a lua file but doesn't run it yet.
+f = loadfile('mod')  -- Calling f() runs mod2.lua.
+
+-- Once you load/require file, you can call for the functions 
+-- from that file
+sum(3,5)
+
+
+----------------------------------------------------
+--  TORCH
+----------------------------------------------------
+
+---------------------------------------------------
+--  Tensors
+----------------------------------------------------
+
+require "torch"
+x = torch.Tensor(3,3)
+print(x)
+x = torch.Tensor(3,3):fill(0)
+print(x)
+
+require "lab"
+x=lab.rand(5,5)
+print(x)
+
+
+---------------------------------------------------
+--  Basic operations with tensors
+----------------------------------------------------
+
+-- Dot product
+x = torch.Tensor(2,2):fill(2)
+y = torch.Tensor(4):fill(3)
+print(x:dot(y))
+
+-- Multiply by value
+x = torch.Tensor(2,2):fill(2)
+print(x:mul(3))
+
+-- Elemtwise multiplication of tensors
+x = torch.Tensor(2,2):fill(2)
+y = torch.Tensor(4):fill(3)
+print(x:cmul(y))
+
+
+---------------------------------------------------
+--  Basic statistics
+----------------------------------------------------
+x = torch.Tensor(10)
+for i=1, 10 do
+  x[i] = i
+end 
+
+print(x)
+print(x:max())
+print(x:min())
+print(x:sum())
+
+
+---------------------------------------------------
+--  Extracting subtensors
+----------------------------------------------------
+
+x = torch.Tensor(5,6):zero()
+print(x)
+
+y = x:select(1, 2):fill(2) -- select row 2 and fill up
+print(y)
+
+print(x)
+
+
+
+---------------------------------------------------
+--  Manipulating tensors
+----------------------------------------------------
+
+x = torch.Tensor(3,4):zero()
+x:select(2,3):fill(7)
+y = x:t()
+
+print(y)
+
+--[[ 0  0  0
+     0  0  0
+     7  7  7
+     0  0  0 ]]
+
+print(x)
+
+--[[ 0  0  7  0
+     0  0  7  0
+     0  0  7  0]]
+
+
+
+
+---------------------------------------------------
+--  Image package
+----------------------------------------------------
+
+require 'image'
+
+lena = image.lena()
+image.display(lena)
+
+-- Load images from your library
+m = image.loadJPG('filename.jpg')
+m = image.loadPNG('filename.png')
+
+-- Scale images 
+small_lena = torch.Tensor(1, 200, 200)
+image.scale(lena[1], small_lena[1])
+image.display(small_lena)
+
+-- Crop images
+--image.crop(input_tensor, number[start_x], number[start_y], number[end_x], number[end_y])
+image.display(image.crop(image.lena(), 1, 128, 512, 256))
+
+
+
+
+---------------------------------------------------
+--  REFERENCES
+-- http://torch5.sourceforge.net/manual/
+-- http://tylerneylon.com/a/learn-lua/
+-- http://www.lua.org/pil/contents.html
+----------------------------------------------------
+
+
+
+
