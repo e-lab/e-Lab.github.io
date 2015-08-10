@@ -19,6 +19,7 @@ $DOC.parseContent(function(){/*
   * [Intelligent Vision Systems]({{=$DOC.root}}html/research-intelligent-vision-systems.html)
   * [Robotics and Vision: Tracking with Deep Networks]({{=$DOC.root}}html/research-tracking-with-deep-networks.html)
   * [Robotics and Vision: Bio-inspired Image Sensors]({{=$DOC.root}}html/research-bio-inspired-image-sensors.html)
+  * [Demo]({{=$DOC.root}}html/research-demo.html)
 * [Publications]()
   * [Publications]({{=$DOC.root}}html/publications.html)
   * [Open-Source Circuits and Systems]({{=$DOC.root}}html/publications-open-source-circuits-and-systems.html)
