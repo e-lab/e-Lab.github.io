@@ -19,6 +19,7 @@ $DOC.parseContent(function(){/*
   * [Intelligent Vision Systems]({{=$DOC.root}}html/research-intelligent-vision-systems.html)
   * [Robotics and Vision: Tracking with Deep Networks]({{=$DOC.root}}html/research-tracking-with-deep-networks.html)
   * [Robotics and Vision: Bio-inspired Image Sensors]({{=$DOC.root}}html/research-bio-inspired-image-sensors.html)
+  * [Demo](https://engineering.purdue.edu/elab/demo/demo.html)
 * [Publications]()
   * [Publications]({{=$DOC.root}}html/publications.html)
   * [Open-Source Circuits and Systems]({{=$DOC.root}}html/publications-open-source-circuits-and-systems.html)
@@ -48,6 +49,6 @@ $DOC.parseContent(function(){/*
 // another example of creating a named section
 $DOC.sections['footer-panel'] =
 '[footer-layout scheme=line]\
-* © 2014 [e-Lab](https://engineering.purdue.edu/elab)\n\***\n\
+* © 2015 [e-Lab](https://engineering.purdue.edu/elab)\n\***\n\
 * [Purdue University](http://purdue.edu)\
 [/footer-layout]';
