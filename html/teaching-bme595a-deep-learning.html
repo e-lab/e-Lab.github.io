@@ -40,8 +40,221 @@
 
 <!-- main contents begins here ----------------------> <!--content-panel
 
+Deep Learning - course schedule 2016
 
-## BME 595A Deep Learning
+BME 595, Eugenio Culurciello
+
+# Time and place: Tue/Thu 12 - 1.15pm, MJIS 1083
+
+# Recommended Books
+
+* Data Science from Scratch, [http://shop.oreilly.com/product/0636920033400.do](http://shop.oreilly.com/product/0636920033400.do)
+
+* Python Machine Learning, [https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning)
+
+* [http://machinelearningmastery.com/deep-learning-courses/](http://machinelearningmastery.com/deep-learning-courses/)
+
+# Recommended courses to follow
+
+* Oxford DeFreitas complements our course: [https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/](https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/), with Torch7 code, exercises: [https://github.com/oxford-cs-ml-2015/](https://github.com/oxford-cs-ml-2015/) 
+
+* Stanford FeiFei / Karphaty: excelent material and readings that complement our couse: [http://cs231n.stanford.edu/](http://cs231n.stanford.edu/) 
+
+# Teaching assistants and help
+
+* Eugenio Culurciello, instructor
+
+* Alfredo Canziani, TA, [canziani@purdue.edu](mailto:canziani@purdue.edu) 
+
+* SangPil Kim, helper TA, [kim2030@purdue.edu](mailto:kim2030@purdue.edu) 
+
+* Abhishek Chaurasia, helper, [aabhish@purdue.edu](mailto:aabhish@purdue.edu) 
+
+# Format
+
+Please monitor the course page and follow the guidelines every week:
+
+1. monitor the class website and notifications, 
+
+2. listen to video-lectures before class each week. Use the video numbers corresponding to each week: [https://www.youtube.com/playlist?list=PLNgy4gid0G9cbw5OjwG2jxvFqYDqkGnpJ](https://www.youtube.com/playlist?list=PLNgy4gid0G9cbw5OjwG2jxvFqYDqkGnpJ), there will be questions in class about the material! 
+
+3. read as much as possible before class each week, continue to read all suggested readings
+
+4. work on homework each week. Each homework is due on first class on following week
+
+5. read as much as possible from suggested readings, additional material and search on your own. Remember: the more you learn, the more you can get from this course.
+
+# Content and timeline
+
+## Week 1: Introduction
+
+### Aug 23-25
+
+* introduction / applications / class format
+
+* what is machine learning?
+
+### Material
+
+* Torch website [http://torch.ch/](http://torch.ch/), Torch Google group [https://groups.google.com/forum/#!forum/torch7](https://groups.google.com/forum/#!forum/torch7), Torch Gitter [https://gitter.im/torch/torch7](https://gitter.im/torch/torch7), Github
+
+* Lua in 15 minutes: [http://tylerneylon.com/a/learn-lua/](http://tylerneylon.com/a/learn-lua/)
+
+* [https://github.com/soumith/cvpr2015/blob/master/Deep%20Learning%20with%20Torch.ipynb](https://github.com/soumith/cvpr2015/blob/master/Deep%20Learning%20with%20Torch.ipynb) Getting Started section only, no CUDA.
+
+* Matlab to Torch guide: [http://atamahjoubfar.github.io/Torch_for_Matlab_users.pdf​](http://atamahjoubfar.github.io/Torch_for_Matlab_users.pdf​) useful if you have had Matlab experience
+
+### Assignment
+
+* Learn the basics of Lua (#1-3 above), video: [https://www.youtube.com/watch?v=QLYLOPeI92g](https://www.youtube.com/watch?v=QLYLOPeI92g) 
+
+* Install virtual machine with our provided Ubuntu image, or install Torch7 on your own computer (#1 above)
+
+* Lua coding exercise: use lua and c interfaced via ffi to load an image, and write a RGB to BGR converter in c.
+
+## Week 2: Neural networks
+
+### Aug 30 - Sept 1
+
+### In class:
+
+* How would you write a program for the categorization of images? Discussion on Tuesday
+
+* what is a neuron (AND, OR in class example)
+
+* what is a neural net (EX-OR example)
+
+* neural nets in real biology and in artificial
+
+### Material
+
+* Study MLP model here: [https://github.com/torch/tutorials/blob/master/2_supervised/2_model.lua](https://github.com/torch/tutorials/blob/master/2_supervised/2_model.lua) 
+
+* Understanding neural nets: [http://playground.tensorflow.org](http://playground.tensorflow.org)
+
+* Lua/Torch7: [https://github.com/oxford-cs-ml-2015/practical1/blob/master/practical1.pdf](https://github.com/oxford-cs-ml-2015/practical1/blob/master/practical1.pdf) 
+
+* [Advanced] NN, manifolds and topology: [http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
+
+* Linear algebra in Torch (little tutorial)
+
+### Assignment
+
+Forward propagation in Lua
+
+## Week 3: Back-propagation
+
+### Sept 6-8
+
+back-propagation explained, and in-class equations in simple terms
+
+### Material
+
+* Great simple numerical example: [https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/) 
+
+* [Advanced] [http://colah.github.io/posts/2015-08-Backprop/](http://colah.github.io/posts/2015-08-Backprop/)
+
+### Assignment
+
+Back propagation in Lua
+
+## Week 4: Training neural networks
+
+### Sept 13-15
+
+how to train in Torch7, training script
+
+### Material
+
+* Deep Learning with Torch: [https://github.com/soumith/cvpr2015/blob/master/Deep%20Learning%20with%20Torch.ipynb](https://github.com/soumith/cvpr2015/blob/master/Deep%20Learning%20with%20Torch.ipynb)
+
+### Assignment
+
+Training own neural network in Torch7
+
+## Week 5: Datasets and learning
+
+Sept 20-22
+
+* What is a dataset? Examples of datasets, how to create datasets and labels
+
+### Assignment
+
+Interface to dataset in torch / torchnet
+
+## Week 6: Deep neural networks models
+
+Sept 27-29
+
+recent state of art CNN models / recent paper architectures
+
+Tools for machine learning: TorchNet or else, Torch packages
+
+## Material
+
+* Convolutional neural network tutorial: [http://neuralnetworksanddeeplearning.com/chap6.html](http://neuralnetworksanddeeplearning.com/chap6.html) 
+
+* Convolutions in neural networks: [http://colah.github.io/posts/2014-07-Understanding-Convolutions/](http://colah.github.io/posts/2014-07-Understanding-Convolutions/)
+
+* Details on convolution arithmetics: [https://github.com/vdumoulin/conv_arithmetic](https://github.com/vdumoulin/conv_arithmetic) 
+
+* Training tutorial: [https://github.com/torch/tutorials/tree/master/2_supervised](https://github.com/torch/tutorials/tree/master/2_supervised) 
+
+* Training advanced: [https://github.com/e-lab/imagenet-multiGPU.torch](https://github.com/e-lab/imagenet-multiGPU.torch) 
+
+## Week 7: Recurrent neural networks
+
+Oct 4-6
+
+Material
+
+* Simple explanation of LSTM / GRU / RNN modules: [http://colah.github.io/posts/2015-08-Understanding-LSTMs/](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+* LSTM original paper: [http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf](http://deeplearning.cs.cmu.edu/pdfs/Hochreiter97_lstm.pdf) 
+
+* Torch7 nngraph explained (needed to understand LSTM code): [https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/practicals/practical5.pdf](https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/practicals/practical5.pdf) 
+
+* Torch7 LSTM and RNN code: [https://github.com/karpathy/char-rnn/](https://github.com/karpathy/char-rnn/) 
+
+## Week 8: Applications of RNN: learning to predict motion and actions
+
+Oct 13 ONE DAY ONLY!
+
+## Week 9: Final projects proposals
+
+Abhi presentation
+
+Oct 18-20
+
+## Week 10: Unsupervised Learning
+
+Oct 25-27
+
+## Week 11: Scene parsing and full-scene understanding
+
+Nov 1-3
+
+## Week 12: Reinforcement learning and applications
+
+SangPil presentation
+
+Nov 8-10
+
+## Week 13: Applications: face-identification, similar images...
+
+Nov 15-17
+
+## Week 14: Hardware for Deep Learning
+
+Vinay presentation
+
+Nov 29 - Dec 1
+
+## Week 15: Final project reports and presentations
+
+Dec 6-8
+
+
 
 
 
