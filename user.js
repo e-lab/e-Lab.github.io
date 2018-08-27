@@ -17,7 +17,6 @@ $DOC.parseContent(function(){/*
 * [Research]()
   * [Research]({{=$DOC.root}}html/research.html)
   * [Intelligent Vision Systems]({{=$DOC.root}}html/research-intelligent-vision-systems.html)
-  * [Robotics and Vision: Bio-inspired Image Sensors]({{=$DOC.root}}html/research-bio-inspired-image-sensors.html)
 * [Publications]()
   * [Publications]({{=$DOC.root}}html/publications.html)
   * [Open-Source Circuits and Systems]({{=$DOC.root}}html/publications-open-source-circuits-and-systems.html)
