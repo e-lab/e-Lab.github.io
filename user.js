@@ -36,6 +36,6 @@ $DOC.parseContent(function(){/*
 // another example of creating a named section
 $DOC.sections['footer-panel'] =
 '[footer-layout scheme=line]\
-* © 2018 [e-Lab](https://engineering.purdue.edu/elab)\n\***\n\
+* © 2020 [e-Lab](https://engineering.purdue.edu/elab)\n\***\n\
 * [Purdue University](http://purdue.edu)\
 [/footer-layout]';
