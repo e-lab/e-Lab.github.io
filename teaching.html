@@ -1,108 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Website Title -->
-    <title>e-Lab teaching</title>
-    <!-- Bootstrap -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Font-Awesome -->
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<!-- Lightbox -->
-	<link href="assets/lightbox/css/lightbox.css" rel="stylesheet">
-    <!-- Text Rotator-->
-	<link href="assets/textrotator/simpletextrotator.css" rel="stylesheet">
-	<!-- FlexSlider -->
-    <link href="assets/flexslider/flexslider.css" rel="stylesheet">
-	<!-- Theme Style -->
-    <link href="css/style.css" rel="stylesheet">
-	<!-- Animations -->
-    <link href="css/animate.css" rel="stylesheet">
-	<!-- Custom Favicon -->
-	<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" /> 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="assets/html5shiv/html5shiv.js"></script>
-    <script src="assets/respond/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-    <!-- /* COLOR PALETTE CSS HEX */ -- https://coolors.co/palettes/trending  
-  --cg-blue: #0081a7ff;
-  --verdigris: #00afb9ff;
-  --light-yellow: #fed9b7ff;
-  --peach-puff: #fed9b7ff;
-  --bittersweet: #f07167ff; -->
-
-  <body id="top">
-
-	  	<!-- ==========================
-        HEADER SECTION 
-        =========================== -->
-        <header id="home">
-		    <!-- creative menu -->
-            <div class="container-fluid">
-              <div class="row">
-                <div class="menu-wrap">
-          				<nav class="menu">
-          				    <!-- Menu Links -->
-          					<div class="icon-list">
-                                <a href="index.html#home"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
-                                <a href="index.html#about"><i class="fa fa-fw fa-quote-left"></i><span>About us</span></a>
-                                <a href="news.html"><i class="fa fa-fw fa-globe"></i><span>News</span></a>
-                                <a href="publications.html"><i class="fa fa-fw fa-picture-o"></i><span>Publications</span></a>
-                                <a href="teaching.html"><i class="fa fa-fw fa-picture-o"></i><span>Teaching</span></a>
-                                <a href="index.html#contact"><i class="fa fa-fw fa-envelope-o"></i><span>Contact</span></a>
-          					</div>
-          				</nav>
-			         </div>
-			         <button class="menu-button" id="open-button"></button><!-- menu button -->
-              </div><!--/row-->
-            </div><!--/container-->
-		  <!-- Header Image -->
-          <section class="hero" id="hero">
-
-            <!-- PARTICLES JS effect -->
-            <!-- <div id="particles-js"></div> -->
-            
-            <div class="container">
-			  <!-- Slider Button (don't edit!)-->
-              <div class="row">
-                <div class="col-md-12 text-right navicon">
-                  <a id="nav-toggle" class="nav_slide_button" href="news.html#"><span></span></a>
-                </div>
-              </div>
-			  <!-- HEADER HEADLINE -->
-
-              <div class="row">
-                <!-- particles.js container --> 
-                  <!-- <div id="particles-js"></div> -->
-                <div class="col-md-8 col-md-offset-1 inner">
-                  <h1 class="animated fadeInDown">
-                    <span>e<span style="color:#00afb9ff">-</span>lab </span>
-                    T<span style="color:#f07167ff;">e</span>aching<br/>
-                  </h1><!-- Title -->
-                  <!-- <h3 class="animated fadeInUp delay-05s"><span class="rotate">Deep Learning, machien-learning hardware, neural networks, biomedical instrumentation, integrated circuits</span></h3>Text Rotator -->
-                </div>
-              </div>
-
-            </div>
-          </section>
-		  <!-- Header Image End -->
-        </header>
-		<!-- ==========================
-        HEADER SECTION END  
-        =========================== -->
-
-    
-    <section class="section-padding" id="teaching">
-        <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>e-Lab teaching</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#f9f9f9", "surface-container": "#eeeeee", "surface-container-high": "#e8e8e8",
+        "on-surface": "#1a1c1c", "on-surface-variant": "#4c4546", "primary": "#000000"
+      },
+      borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+      spacing: { "unit": "4px", "container-padding": "1rem", "window-margin": "2rem", "gutter": "1rem" },
+      fontFamily: {
+        "headline-lg": ["Work Sans"], "headline-md": ["Work Sans"], "title-bar": ["Work Sans"],
+        "label-caps": ["Space Grotesk"], "mono": ["Space Grotesk"], "body-md": ["Inter"], "body-sm": ["Inter"]
+      },
+      fontSize: {
+        "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+        "headline-md": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+        "title-bar": ["14px", {"lineHeight": "18px", "fontWeight": "700"}],
+        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+.dither-bg { background-image: radial-gradient(#000 1px, transparent 0); background-size: 4px 4px; background-color: #f9f9f9; }
+.racing-stripes { background: repeating-linear-gradient(0deg, #000, #000 1px, transparent 1px, transparent 4px); }
+.retro-window-shadow { box-shadow: 4px 4px 0 0 #000; }
+.btn-double-border { border: 1px solid #000; outline: 2px solid #000; outline-offset: -4px; }
+.content h2 { margin: 2rem 0 1rem; font-family: Work Sans, sans-serif; font-size: 1.5rem; line-height: 2rem; font-weight: 900; text-transform: uppercase; }
+.content h3 { margin: 2rem 0 1rem; border-bottom: 1px solid #000; padding-bottom: .5rem; font-family: Work Sans, sans-serif; font-size: 1.1rem; line-height: 1.5rem; font-weight: 800; text-transform: uppercase; }
+.content h4 { margin: 1.25rem 0 .35rem; font-family: Work Sans, sans-serif; font-size: .95rem; line-height: 1.35rem; font-weight: 800; text-transform: uppercase; }
+.content p { margin: .85rem 0; font-size: 14px; line-height: 1.65; }
+.content a { color: #000; font-weight: 700; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.content a:hover { background: #000; color: #fff; }
+.content img { border: 1px solid #000; filter: grayscale(1) contrast(1.2); max-width: 100%; height: auto; }
+.content hr { margin: 2rem 0; border: 0; border-top: 1px solid #000; }
+.content strong { font-weight: 800; }
+.content div[style*="display:table"] { display: grid !important; grid-template-columns: minmax(120px, 200px) 1fr; gap: 1rem; align-items: start; margin: 1rem 0; }
+.content div[style*="display:table-row"], .content div[style*="display:table-cell"] { display: block !important; padding-left: 0 !important; }
+@media (max-width: 640px) { .content div[style*="display:table"] { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="bg-surface dither-bg font-body-md text-on-surface min-h-screen pt-10">
+<header class="fixed top-0 left-0 w-full h-6 border-b border-black z-50 bg-white flex items-center px-4 overflow-hidden">
+<div class="text-[14px] font-black text-black mr-6 uppercase tracking-tighter font-['Work_Sans'] whitespace-nowrap">e-Lab</div>
+<nav class="flex gap-4 items-center h-full overflow-x-auto">
+<a class="text-black hover:bg-black hover:text-white px-2 py-0.5 font-['Work_Sans'] text-[14px] font-bold uppercase tracking-tighter whitespace-nowrap" href="index.html">Home</a>
+<a class="text-black hover:bg-black hover:text-white px-2 py-0.5 font-['Work_Sans'] text-[14px] font-bold uppercase tracking-tighter whitespace-nowrap" href="index.html#about">About</a>
+<a class="text-black hover:bg-black hover:text-white px-2 py-0.5 font-['Work_Sans'] text-[14px] font-bold uppercase tracking-tighter whitespace-nowrap" href="news.html">News</a>
+<a class="text-black hover:bg-black hover:text-white px-2 py-0.5 font-['Work_Sans'] text-[14px] font-bold uppercase tracking-tighter whitespace-nowrap" href="publications.html">Publications</a>
+<a class="bg-black text-white px-2 py-0.5 font-['Work_Sans'] text-[14px] font-bold uppercase tracking-tighter whitespace-nowrap" href="teaching.html">Teaching</a>
+<a class="text-black hover:bg-black hover:text-white px-2 py-0.5 font-['Work_Sans'] text-[14px] font-bold uppercase tracking-tighter whitespace-nowrap" href="index.html#contact">Contact</a>
+</nav><div class="ml-auto hidden md:flex items-center"><span class="material-symbols-outlined text-[16px]">settings</span></div></header>
+<main class="max-w-6xl mx-auto px-gutter py-window-margin space-y-12">
+<section class="flex flex-col items-center justify-center py-12" id="home">
+<div class="bg-white border-2 border-black p-6 md:p-8 retro-window-shadow text-center max-w-full">
+<h1 class="text-[36px] md:text-[64px] font-black tracking-[0.14em] md:tracking-[0.2em] leading-none mb-4 uppercase">E - L A B<br/>T E A C H I N G</h1>
+<div class="h-1 bg-black w-full mb-4 racing-stripes"></div>
+<p class="font-mono text-headline-md uppercase tracking-widest">Courses by Eugenio Culurciello</p>
+</div>
+</section>
+<section class="bg-white border border-black retro-window-shadow ">
+<div class="h-6 border-b border-black bg-surface-container flex items-center px-2 justify-between">
+<div class="flex items-center gap-1"><div class="w-3 h-3 border border-black"></div><div class="racing-stripes w-16 h-3 opacity-20 hidden sm:block"></div></div>
+<span class="font-title-bar text-title-bar uppercase">Teaching.folder</span>
+<div class="flex items-center gap-1"><div class="racing-stripes w-16 h-3 opacity-20 hidden sm:block"></div><span class="material-symbols-outlined text-sm">unfold_more</span></div>
+</div>
+<div class="p-container-padding"><div class="content">
 <!-- <h2 id="teaching">Teaching</h2> -->
             <hr>
             <h2 id="courses-by-eugenio-culurciello">Courses by Eugenio Culurciello</h2>
@@ -123,100 +98,22 @@
             <p>Designed to develop engineering skills in the design and analysis of digital logic components and circuits, to make students thoroughly familiar with the basics of gate-level circuit design starting from single gates and building up to complex systems, and to provide hands-on experience and exposure to circuit design using state-of-the-art computer aided design tools and programmable logic devices using VHDL.</p>
             <h4 id="eeng427-enas627-advanced-integrated-circuits">EENG427 / ENAS627 Advanced Integrated Circuits</h4>
             <p>Neuromorphic analog integrated circuit design, fabrication processes, fundamentals of devices, circuits and basic topologies. Analog and mixed-signal VLSI and SOC for biomedical instrumentation and bio-inspired circuits. System-level design, simulation, layout and tapeout. Examples of VLSI systems for biomedical applications: models of biological systems and circuit implementation. Biomedical sensors, SNR and electronic circuit noise. Sensor arrays, communication and analog-digital circuit interaction and co-design. Signal conversion, conditioning, compression and reconstruction.</p>
-
-            </div>
-            </div>
-            </div>
-            </section>
-            <!-- ==========================
-            FOOTER SECTION
-            =========================== -->
-            <footer>
-                <div class="container" id="contact">
-                  <!-- Social Buttons - use font-awesome, past in what you want -->
-                  <div class="row">
-                    <div class="col-md-12">
-                      <ul class="social-buttons">
-                        <!-- <li><a href="https://e-lab.github.io/" class="social-btn"><i class="fa fa-dribbble"></i></a></li>dribble -->
-                        <!-- <li><a href="https://medium.com/@culurciello/" class="social-btn"><i class="fa fa-medium"></i></a></li>twitter -->
-                        <!-- <li><a href="https://www.linkedin.com/in/eugenioculurciello/" class="social-btn"><i class="fa fa-linkedin"></i></a></li>facebook -->
-                      </ul>
-                    </div>
-                  </div>
-            
-            
-                  <div class="row">
-                    <div class="col-md-12 text-center">
-                      <p>All Rights Reserved. &copy; 2022 - e-Lab</p>
-                    </div>
-            <!--               <div>
-                      <img src="img/palette_crop.jpg" width="100%" alt="palette crop">
-                    </div> -->
-                  </div>
-            
-            
-                  </div>
-                </div>
-              </footer>
-              <!-- ==========================
-              FOOTER SECTION END
-              =========================== -->		
-            
-            
-                <div class="container-fluid" id="waves">
-                  <!--Waves Container-->
-                  <div class="row">
-                      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                      <defs>
-                      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                      </defs>
-                      <g class="parallax">
-                      <use xlink:href="#gentle-wave" x="48" y="1" fill="rgba(24,117,155,0.7" />
-                      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(31,165,176,0.7)" />
-                      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(252,252,219,0.9)" />
-                      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(251,212,177,0.9)" />
-                      <use xlink:href="#gentle-wave" x="48" y="9" fill="rgba(184,80,76,0.7)" />
-                      <!-- <use xlink:href="#gentle-wave" x="48" y="11" fill="#fff" /> -->
-                      </g>
-                      </svg>
-                    </div>
-                  <!--Waves end-->
-                </div>
-            
-              
-            <!-- jQuery -->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-            <!-- SmoothScroll -->           
-            <script type="text/javascript" src="assets/smoothscroll/smoothscroll.js"></script>
-            <!-- Bootstrap -->
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-            <!-- Waypoints -->
-            <script src="js/waypoints.min.js"></script>
-            <!-- classie.js -->
-            <script src="js/classie.js"></script>
-            <!-- FlexSlider -->
-            <script src="assets/flexslider/jquery.flexslider.js"></script>
-            <!-- Modernizr -->
-            <script src="js/modernizr.js"></script>
-            <!-- Text Rotator -->
-            <script src="assets/textrotator/jquery.simple-text-rotator.js"></script>
-            <!-- Lightbox.js -->
-            <!-- <script src="assets/lightbox/js/lightbox.min.js"></script> -->
-            <!-- Particles JS https://github.com/VincentGarreau/particles.js/ -->
-            <script src="js/particles.js"></script>
-            <!-- Theme JavaScript Core -->
-            <script src="js/main.js"></script>
-            
-            
-            <!-- TEXT ROTATOR SETTINGS -->
-            <script type="text/javascript">
-            $(".rotate").textrotator({
-            animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
-            separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
-            speed: 2000 // How many milliseconds until the next word show.
-            });
-            </script>
-            
-            </body>
-            </html>
+</div></div>
+</section>
+</main>
+<footer class="w-full border-t border-black bg-zinc-100 mt-20">
+<div class="flex flex-col md:flex-row gap-4 md:gap-6 justify-between items-start md:items-center px-8 py-4 w-full">
+<div class="font-['Work_Sans'] text-[10px] uppercase tracking-widest text-black">All Rights Reserved. © 2026 - e-Lab</div>
+<div class="flex flex-wrap gap-6">
+<a class="font-['Work_Sans'] text-[10px] uppercase tracking-widest text-zinc-600 hover:text-black hover:underline" href="https://e-lab.github.io/">e-Lab</a>
+<a class="font-['Work_Sans'] text-[10px] uppercase tracking-widest text-zinc-600 hover:text-black hover:underline" href="https://medium.com/@culurciello/">Medium</a>
+<a class="font-['Work_Sans'] text-[10px] uppercase tracking-widest text-zinc-600 hover:text-black hover:underline" href="https://www.linkedin.com/in/eugenioculurciello/">LinkedIn</a>
+</div>
+</div>
+</footer>
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-white border border-black retro-window-shadow flex flex-col items-center justify-center p-1 cursor-pointer hover:bg-black group" href="index.html#contact" aria-label="Contact">
+<span class="material-symbols-outlined text-black group-hover:text-white" style="font-size: 32px;">mail</span>
+<span class="text-[8px] font-black uppercase mt-1 text-black group-hover:text-white">Contact</span>
+</a>
+</body>
+</html>
